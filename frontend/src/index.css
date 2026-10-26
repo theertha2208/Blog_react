@@ -1,0 +1,534 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+/* =========================================
+   MYBLOG - SOFT LAVENDER & CREAM THEME
+========================================= */
+
+:root {
+  font-family: "DM Sans", sans-serif;
+
+  color: #43394b;
+  background-color: #fffcf9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* MAIN THEME COLORS */
+  --color-background: #fffcf9;
+  --color-surface: #ffffff;
+
+  --color-lavender: #f2e6f7;
+  --color-lilac: #e9ddf1;
+  --color-purple: #8c6aa7;
+  --color-purple-light: #9c7bb6;
+  --color-plum: #493b55;
+
+  --color-text: #43394b;
+  --color-muted: #918398;
+  --color-border: #e9dfef;
+  --color-hover: #e2d0ed;
+
+  /* LEGACY COLOR VARIABLES
+     Retained for compatibility with
+     existing components.
+  */
+  --color-peach: #f2e6f7;
+  --color-blush: #e9ddf1;
+  --color-rose: #9c7bb6;
+}
+
+/* =========================================
+   BASE STYLES
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Keep the page headings consistent
+   with the editorial lavender design.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+p {
+  line-height: 1.7;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: "DM Sans", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background-color: #e9ddf1;
+  color: #43394b;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.font-editorial {
+  font-family: "Playfair Display", serif;
+}
+
+.font-modern {
+  font-family: "DM Sans", sans-serif;
+}
+
+.font-display {
+  font-family: "Playfair Display", serif;
+}
+
+.text-accent {
+  color: #8c6aa7;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.editorial-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 18px rgba(105, 83, 125, 0.035);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.editorial-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(105, 83, 125, 0.09);
+
+  border-color: #d7bce5;
+}
+
+.editorial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.editorial-card:hover .editorial-image {
+  transform: scale(1.035);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-editorial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 24px;
+
+  background-color: #8c6aa7;
+  color: #ffffff;
+
+  border: 1px solid #8c6aa7;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-editorial:hover {
+  background-color: #75538f;
+  border-color: #75538f;
+
+  box-shadow:
+    0 5px 14px rgba(105, 83, 125, 0.15);
+
+  transform: translateY(-1px);
+}
+
+.btn-editorial:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.btn-outline-editorial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 24px;
+
+  background-color: #ffffff;
+  color: #8c6aa7;
+
+  border: 1px solid #dcc6e8;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-outline-editorial:hover {
+  background-color: #f7f0fa;
+  border-color: #b998cb;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   FORM INPUTS
+========================================= */
+
+.editorial-input {
+  width: 100%;
+
+  padding: 13px 16px;
+
+  background-color: #fffcfe;
+  color: #43394b;
+
+  border: 1px solid #e4d7ea;
+  border-radius: 14px;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.editorial-input::placeholder {
+  color: #b4a5ba;
+}
+
+.editorial-input:focus {
+  border-color: #a889be;
+
+  box-shadow:
+    0 0 0 3px rgba(233, 221, 241, 0.6);
+}
+
+.editorial-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =========================================
+   PASTEL BACKGROUNDS
+========================================= */
+
+.bg-pastel-cream {
+  background-color: #fffcf9;
+}
+
+.bg-pastel-lavender {
+  background-color: #f2e6f7;
+}
+
+.bg-pastel-lilac {
+  background-color: #e9ddf1;
+}
+
+.bg-pastel-purple {
+  background-color: #8c6aa7;
+}
+
+.bg-pastel-soft {
+  background-color: #f8f2fb;
+}
+
+.bg-pastel-white {
+  background-color: #ffffff;
+}
+
+/* LEGACY CLASS NAMES
+   Kept so existing JSX still works.
+*/
+
+.bg-pastel-peach {
+  background-color: #f2e6f7;
+}
+
+.bg-pastel-blush {
+  background-color: #e9ddf1;
+}
+
+/* =========================================
+   BADGES
+========================================= */
+
+.pastel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 7px 13px;
+
+  background-color: #f0e5f5;
+  color: #8c6aa7;
+
+  border: 1px solid #e4d7ea;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================
+   SIMPLE ANIMATIONS
+========================================= */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.4s ease both;
+}
+
+/* =========================================
+   BLOG ARTICLE CONTENT
+========================================= */
+
+.blog-content {
+  font-family: "DM Sans", sans-serif;
+
+  color: #43394b;
+
+  font-size: 16px;
+  line-height: 1.9;
+
+  overflow-wrap: anywhere;
+}
+
+.blog-content p {
+  margin-bottom: 1.4rem;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  font-family: "Playfair Display", serif;
+
+  color: #43394b;
+  font-weight: 700;
+
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+  line-height: 1.35;
+}
+
+.blog-content h1 {
+  font-size: 2rem;
+}
+
+.blog-content h2 {
+  font-size: 1.65rem;
+}
+
+.blog-content h3 {
+  font-size: 1.35rem;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #9c7bb6;
+
+  padding: 10px 0 10px 20px;
+  margin: 1.75rem 0;
+
+  background-color: #f8f2fb;
+
+  color: #65566d;
+  font-style: italic;
+
+  border-radius: 0 12px 12px 0;
+}
+
+.blog-content a {
+  color: #8c6aa7;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-content a:hover {
+  color: #694b84;
+}
+
+.blog-content strong,
+.blog-content b {
+  font-weight: 700;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 14px;
+
+  margin: 1.5rem 0;
+}
+
+.blog-content hr {
+  border: 0;
+  border-top: 1px solid #e9dfef;
+  margin: 2rem 0;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffcf9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dcc6e8;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b998cb;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+:focus-visible {
+  outline: 2px solid #8c6aa7;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   RESPONSIVE BLOG CONTENT
+========================================= */
+
+@media (max-width: 640px) {
+  .blog-content {
+    font-size: 15px;
+  }
+
+  .blog-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.45rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.2rem;
+  }
+}

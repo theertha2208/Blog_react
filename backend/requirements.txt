@@ -1,0 +1,7 @@
+
+Django>=5.2,<5.3
+djangorestframework>=3.16,<4
+django-cors-headers>=4.7,<5
+Pillow>=11,<13
+bleach>=6,<7
+

@@ -1,0 +1,59 @@
+/* =========================================
+   MYBLOG - APPLICATION STYLES
+   SOFT LAVENDER & CREAM THEME
+========================================= */
+
+/* MAIN APPLICATION */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* PAGE TRANSITIONS */
+.page-enter {
+  animation: pageFadeIn 0.4s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LAVENDER DIVIDER */
+.lavender-divider {
+  height: 1px;
+  width: 100%;
+  background-color: #e9dfef;
+}
+
+/* SOFT LAVENDER SHADOW */
+.lavender-shadow {
+  box-shadow: 0 8px 30px rgba(105, 83, 125, 0.06);
+}
+
+/* SMOOTH INTERACTIVE ELEMENTS */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* RESPONSIVE APPLICATION */
+@media (max-width: 640px) {
+  #root {
+    overflow-x: clip;
+  }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
